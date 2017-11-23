@@ -1,6 +1,9 @@
 # WattnPC
 C# Tyrolean card game made for a school project (german)
 
+## Download
+https://github.com/malthee/WattnPC/releases
+
 ## Hilfe und Informationen
 
 Das Spiel ist basiert auf ein tirolerisch-bayerisches Kartenspiel. Wattn PC ermoeglicht es, Watten zu spielen ohne Karten bei Hand zu haben. Die Spieleranzahl variiert von 2-4 Spielern und wenn man das Ai herausfordern möchte kann man zwischen "leicht" und "mittel" auswählen.
