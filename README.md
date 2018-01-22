@@ -1,6 +1,14 @@
 # WattnPC
 C# Tyrolean card game made for a school project (german)
 
+
+## (This project is now retired.)
+I don't want to update this game any longer, because it wasn't coded that well. 
+
+
+
+![WattnPC UI](https://i.imgur.com/uF6IcKF.png)
+
 ## Download
 https://github.com/malthee/WattnPC/releases
 
@@ -19,6 +27,8 @@ Beispiel: Eichel König ist angesagt. Die erste gelegte Karte ist eine Schell Ac
 *Eichel irgendwelcher Zahl
 
 *König irgentwelcher Farbe
+
+![Mods UI](https://i.imgur.com/rVtoLlV.png)
 
 ## Mods
 
