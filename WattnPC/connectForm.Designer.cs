@@ -49,6 +49,7 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.comboBoxSetting = new System.Windows.Forms.ComboBox();
+            this.buttonCardDesign = new System.Windows.Forms.Button();
             this.groupBoxHostJoin.SuspendLayout();
             this.groupBoxSpielEinstellungen.SuspendLayout();
             this.SuspendLayout();
@@ -136,7 +137,6 @@
             this.comboBoxHost.Size = new System.Drawing.Size(176, 21);
             this.comboBoxHost.TabIndex = 0;
             this.comboBoxHost.Visible = false;
-            this.comboBoxHost.SelectedValueChanged += new System.EventHandler(this.comboBoxHost_SelectedValueChanged);
             // 
             // buttonHost
             // 
@@ -166,7 +166,7 @@
             this.checkBoxLatinisch.Checked = true;
             this.checkBoxLatinisch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxLatinisch.Enabled = false;
-            this.checkBoxLatinisch.Location = new System.Drawing.Point(196, 64);
+            this.checkBoxLatinisch.Location = new System.Drawing.Point(1, 77);
             this.checkBoxLatinisch.Name = "checkBoxLatinisch";
             this.checkBoxLatinisch.Size = new System.Drawing.Size(130, 18);
             this.checkBoxLatinisch.TabIndex = 8;
@@ -218,6 +218,7 @@
             // groupBoxSpielEinstellungen
             // 
             this.groupBoxSpielEinstellungen.Controls.Add(this.checkBoxKrittenUber);
+            this.groupBoxSpielEinstellungen.Controls.Add(this.checkBoxLatinisch);
             this.groupBoxSpielEinstellungen.Controls.Add(this.checkBoxKrittenimSpiel);
             this.groupBoxSpielEinstellungen.Controls.Add(this.checkBoxWeliFarbe);
             this.groupBoxSpielEinstellungen.Controls.Add(this.checkBoxGuadeundBese);
@@ -233,9 +234,10 @@
             this.labelJoinStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJoinStatus.Location = new System.Drawing.Point(194, 42);
             this.labelJoinStatus.Name = "labelJoinStatus";
-            this.labelJoinStatus.Size = new System.Drawing.Size(128, 28);
+            this.labelJoinStatus.Size = new System.Drawing.Size(132, 28);
             this.labelJoinStatus.TabIndex = 14;
             this.labelJoinStatus.Text = "                      ";
+            this.labelJoinStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxJoin
             // 
@@ -296,13 +298,23 @@
             this.comboBoxSetting.Size = new System.Drawing.Size(126, 21);
             this.comboBoxSetting.TabIndex = 18;
             // 
+            // buttonCardDesign
+            // 
+            this.buttonCardDesign.Location = new System.Drawing.Point(194, 16);
+            this.buttonCardDesign.Name = "buttonCardDesign";
+            this.buttonCardDesign.Size = new System.Drawing.Size(132, 23);
+            this.buttonCardDesign.TabIndex = 19;
+            this.buttonCardDesign.Text = "Eigenes Kartendesign ";
+            this.buttonCardDesign.UseVisualStyleBackColor = true;
+            this.buttonCardDesign.Click += new System.EventHandler(this.buttonCardDesign_Click);
+            // 
             // connectForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 126);
-            this.Controls.Add(this.checkBoxLatinisch);
+            this.Controls.Add(this.buttonCardDesign);
             this.Controls.Add(this.comboBoxSetting);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPassword);
@@ -355,5 +367,6 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.ComboBox comboBoxSetting;
+        private System.Windows.Forms.Button buttonCardDesign;
     }
 }

@@ -25,6 +25,7 @@ namespace WattnPC
         public bool Kritten, Guadebese, Krittenuberspringen, Latinisch, WeliFarbe; //settings are made by the host and send to the player
         public byte Spieleranzahl;
         public string Spielmodi;
+        public Bitmap KartenBitmap;
         /*
         public string MyIP, DataRecieved;
         public string Spieler2IP, Spieler3IP, Spieler4IP;
@@ -60,14 +61,9 @@ namespace WattnPC
 
         #region Controlls enablen und disablen 
 
-        private void comboBoxHost_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         //Elements are enabled/disabled depending on the option that is selected
         private void radioButtonCheckedChanged(object sender, EventArgs e)
-        { 
+        {
             /*
             if (radioButtonHost.Checked)
             {
@@ -106,13 +102,13 @@ namespace WattnPC
         private void checkBoxEinstellungenChanged(object sender, EventArgs e) //some modifications only work when others are off
         {
             if (checkBoxKrittenimSpiel.Checked)
-            { 
+            {
                 checkBoxWeliFarbe.Enabled = false;
                 checkBoxWeliFarbe.Checked = false;
                 checkBoxKrittenUber.Enabled = true;
             }
             else if (checkBoxWeliFarbe.Checked)
-            { 
+            {
                 checkBoxKrittenimSpiel.Enabled = false;
                 checkBoxKrittenUber.Enabled = false;
                 checkBoxKrittenimSpiel.Checked = false;
@@ -131,7 +127,7 @@ namespace WattnPC
 
         #endregion
 
-        #region Join und Host (NET UNAKTIV)
+        #region Join und Host (NET INAKTIV)
 
         private void buttonJoin_Click(object sender, EventArgs e)
         {
@@ -217,6 +213,31 @@ namespace WattnPC
 
         #endregion
 
+        #region Load Custom Cards
+
+        private void buttonCardDesign_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image Files (*.png)|*.png";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap tempMap = new Bitmap(ofd.FileName);
+                    if (tempMap.Height == 5400 && tempMap.Width == 1534) //only set the image if it matches the size
+                    {
+                        KartenBitmap = tempMap;
+                        labelJoinStatus.Text = "Erfolgreich geladen!";
+                    }
+                    else
+                    {
+                        labelJoinStatus.Text = "Falsche Bildergröße!";
+                    }
+                }
+            }
+        }
+
+        #endregion
+
         private async void buttonNetwork_Click(object sender, EventArgs e) //play without network, standard atm
         {
             if (comboBoxSetting.SelectedItem == null)
@@ -243,50 +264,5 @@ namespace WattnPC
         {
             if (this.DialogResult == DialogResult.Cancel) { Environment.Exit(0); } //if form is closed with the red X, just close the program
         }
-
-    /*
-    private bool Send(string hostip, string text)
-    {
-
-        TcpClient tcpclnt = new TcpClient();
-        Stream stm;
-        byte[] ba = Encoding.UTF8.GetBytes(text);
-
-        if (hostip == MyIP) //can't connect to own ip lmo
-            return false;
-
-        try
-        {
-            tcpclnt.Connect(hostip, 7777);
-        }
-        catch
-        {
-            Console.WriteLine("NTW: Connect Failure");
-            return false;
-        }
-
-        try
-        {
-            stm = tcpclnt.GetStream();
-        }
-        catch
-        {
-            Console.WriteLine("NTW: GetStream Failure");
-            return false;
-        }
-
-        try
-        {
-            stm.Write(ba, 0, ba.Length);
-        }
-        catch
-        {
-            Console.WriteLine("NTW: Write Failure");
-            return false;
-        }
-
-        return true; //if everything worked return true 
-} //for normal sending NET
-*/
-}
+    }
 }

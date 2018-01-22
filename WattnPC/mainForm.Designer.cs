@@ -393,7 +393,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(855, 535);
             this.Name = "mainForm";
-            this.Text = "WattnPC 1.0";
+            this.Text = "WattnPC";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.mainForm_HelpButtonClicked);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
